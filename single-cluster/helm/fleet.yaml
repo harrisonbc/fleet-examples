@@ -31,12 +31,13 @@ helm:
   values:
     replicas: 2
 
-#dependsOn:
-#  - namespaceSelector:
-#      matchLabels:
-#        foo: bar
-
-overrideTargets:
-  - clusterSelector:
+dependsOn:
+  - name brynn-fleet-single-cluster-helm
+  - namespaceSelector:
       matchLabels:
-        env: dev
+        foo: bar
+
+#overrideTargets:
+#  - clusterSelector:
+#      matchLabels:
+#        env: dev
