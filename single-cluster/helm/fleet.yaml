@@ -31,10 +31,10 @@ helm:
   values:
     replicas: 2
 
-dependsOn:
-  - selector:
-      matchLabels:
-        foo: bar
+#dependsOn:
+#  - selector:
+#      matchLabels:
+#        foo: bar
 
 #overrideTargets:
 #  - clusterSelector:
