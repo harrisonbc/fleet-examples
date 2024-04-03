@@ -31,7 +31,12 @@ helm:
   values:
     replicas: 2
 
-dependsOn:
-  - namespaceSelector:
+#dependsOn:
+#  - namespaceSelector:
+#      matchLabels:
+#        foo: bar
+
+overrideTargets:
+  - clusterSelector:
       matchLabels:
-        foo: bar
+        env: dev
