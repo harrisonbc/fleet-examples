@@ -2,7 +2,7 @@
 
 # The namespace this chart will be installed and restricted to,
 # if not specified the chart will be installed to "default"
-namespace: fleet-helm-example
+namespace: brynn-fleet-helm-example
 
 # Custom helm options
 helm:
@@ -30,3 +30,8 @@ helm:
   # Custom values that will be passed as values.yaml to the installation
   values:
     replicas: 2
+
+dependsOn:
+  - namespaceSelector:
+      matchLabels:
+        foo: bar
