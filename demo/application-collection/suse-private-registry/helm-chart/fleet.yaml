@@ -15,6 +15,8 @@ helm:
   valuesFiles:
     - values.yaml
 
+  values:
+    externalURL: https://eu-spr2.merckgroup.com
 # Custom helm options
 
   # The directory of the chart in the repo.  Also any valid go-getter supported
