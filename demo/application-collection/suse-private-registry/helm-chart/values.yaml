@@ -33,7 +33,7 @@ expose:
       secretName: "sprcert"
   ingress:
     hosts:
-      core: eu-spr.merckgroup.com
+      core: spr2.harrison.local   #  eu-spr.merckgroup.com
     # set to the type of ingress controller if it has specific requirements.
     # leave as `default` for most ingress controllers.
     # set to `gce` if using the GCE ingress controller
@@ -114,7 +114,7 @@ expose:
 # the IP address of k8s node
 #
 # If Harbor is deployed behind the proxy, set it as the URL of proxy
-externalURL: https://eu-spr.merckgroup.com
+externalURL: https://spr2.harrison.local  # https://eu-spr.merckgroup.com
 
 # The persistence is enabled by default and a default StorageClass
 # is needed in the k8s cluster to provision volumes dynamically.
@@ -276,7 +276,7 @@ persistence:
 # or give an existing secret for it
 # key in secret is given via (default to HARBOR_ADMIN_PASSWORD)
 # existingSecretAdminPassword:
-existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
+# existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
 harborAdminPassword: "Harbor12345"
 
 # The internal TLS used for harbor components secure communicating. In order to enable https
