@@ -40,5 +40,3 @@ proxy:
   httpProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
   httpsProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
 redis:
-  internal:
-imagePullSecrets: suse-registry
