@@ -1,8 +1,0 @@
-apiVersion: v1
-data:
-  .dockerconfigjson: >-
-    eyJhdXRocyI6eyJyZWdpc3RyeS5zdXNlLmNvbSI6eyJ1c2VybmFtZSI6IjQ4NGQ2YzY5ZWUiLCJwYXNzd29yZCI6Ijk0M2NiOGVmZGIiLCJhdXRoIjoiTkRnMFpEWmpOamxsWlRvNU5ETmpZamhsWm1SaSJ9fX0=
-kind: Secret
-metadata:
-  name: suse-registry
-type: kubernetes.io/dockerconfigjson
