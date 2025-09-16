@@ -47,7 +47,7 @@ helm:
       persistentVolumeClaim:
         database:
 #          storageClass: px-postgress
-          size: 1Gi
+          size: 2Gi
 
         jobservice:
           jobLog:
