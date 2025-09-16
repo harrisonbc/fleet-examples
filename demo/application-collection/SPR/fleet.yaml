@@ -17,6 +17,68 @@ helm:
 
   values:
     externalURL: https://eu-spr2.merckgroup.com
+
+    harborAdminPassword: "SUSEPR12345"
+#database:
+#  type: internal
+    expose:
+      ingress:
+        hosts:
+          core: spr2.harrison.local  # eu-spr.merckgroup.com
+      tls:
+    #    certSource: secret
+        secret:
+          secretName: "sprcert"
+    externalURL: https://spr2.harrison.local  # https://eu-spr.merckgroup.com
+    #jobservice:
+    #  jobLoggers:
+    #    - database
+    persistence:
+      imageChartStorage:
+        disableredirect: true
+        s3:
+          bucket: spr
+          region: eu-west-1
+          accesskey: # XXXXXXXXXXXXXXXXX
+          regionendpoint: https://s3.brynnharrison.com  # https://s3scality.merckgroup.com
+          secretkey: # XXXXXXXXXXXXXXXXX
+          secure: false
+          v4auth: true
+        type: s3
+        caBundleSecretName: s3-ca
+      resourcePolicy: ""
+      persistentVolumeClaim:
+        database:
+          storageClass: px-postgress
+          size: 1Gi
+
+        jobservice:
+          jobLog:
+            storageClass: px-jobservice
+            size: 1Gi
+
+        redis:
+          storageClass: px-redis
+          size: 1Gi
+
+        trivy:
+          storageClass: px-trivy
+          size: 1Gi
+    proxy:
+    #  httpProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
+    #  httpsProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
+    #  noProxy: 127.0.0.1,localhost,.local,.internal
+      components:
+        - core
+        - jobservice
+        - trivy
+
+    redis:
+      type: internal
+
+
+
+
 # Custom helm options
 
   # The directory of the chart in the repo.  Also any valid go-getter supported
