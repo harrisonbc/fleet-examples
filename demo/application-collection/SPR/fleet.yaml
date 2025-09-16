@@ -66,9 +66,9 @@ helm:
     #  httpsProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
     #  noProxy: 127.0.0.1,localhost,.local,.internal
       components:
-        - core
-        - jobservice
-        - trivy
+#        - core
+#        - jobservice
+#        - trivy
 
 #    redis:
 #      type: internal
