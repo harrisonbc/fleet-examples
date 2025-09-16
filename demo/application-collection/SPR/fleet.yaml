@@ -12,11 +12,11 @@ helm:
   chart: oci://registry.suse.com/private-registry/private-registry-helm
   version: 1.0.1
 
-  valuesFiles:
-    - values.yaml
+#  valuesFiles:
+#    - values.yaml
 
   values:
-#    externalURL: https://eu-spr2.merckgroup.com
+    externalURL: https://eu-spr2.merckgroup.com
 # Custom helm options
 
   # The directory of the chart in the repo.  Also any valid go-getter supported
