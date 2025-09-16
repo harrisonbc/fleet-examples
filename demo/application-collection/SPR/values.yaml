@@ -48,10 +48,10 @@ proxy:
 #  httpProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
 #  httpsProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
 #  noProxy: 127.0.0.1,localhost,.local,.internal
-#  components:
-#    - core
-#    - jobservice
-#    - trivy
+  components:
+    - core
+    - jobservice
+    - trivy
 
 redis:
   type: internal
