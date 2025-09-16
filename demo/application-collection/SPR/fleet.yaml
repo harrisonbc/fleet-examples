@@ -1,8 +1,5 @@
 defaultNamespace: suse-private-registry
 
-
-# This file and all contents in it are OPTIONAL.
-
 # The namespace this chart will be installed and restricted to,
 # if not specified the chart will be installed to "default"
 namespace: suse-private-registry
@@ -16,9 +13,9 @@ helm:
 #    - values.yaml
 
   values:
-    externalURL: https://eu-spr2.merckgroup.com
 
     harborAdminPassword: "SUSEPR12345"
+
 #database:
 #  type: internal
     expose:
@@ -26,7 +23,7 @@ helm:
         hosts:
           core: spr2.harrison.local  # eu-spr.merckgroup.com
       tls:
-    #    certSource: secret
+        certSource: secret
         secret:
           secretName: "sprcert"
     externalURL: https://spr2.harrison.local  # https://eu-spr.merckgroup.com
@@ -49,20 +46,20 @@ helm:
       resourcePolicy: ""
       persistentVolumeClaim:
         database:
-          storageClass: px-postgress
+#          storageClass: px-postgress
           size: 1Gi
 
         jobservice:
           jobLog:
-            storageClass: px-jobservice
+#            storageClass: px-jobservice
             size: 1Gi
 
         redis:
-          storageClass: px-redis
+#          storageClass: px-redis
           size: 1Gi
 
         trivy:
-          storageClass: px-trivy
+#          storageClass: px-trivy
           size: 1Gi
     proxy:
     #  httpProxy: http://USERNAME:PASSWORD@proxy.eu.merckgroup.com:8080
@@ -75,32 +72,5 @@ helm:
 
     redis:
       type: internal
-
-
-
-
-# Custom helm options
-
-  # The directory of the chart in the repo.  Also any valid go-getter supported
-  # URL can be used there is specify where to download the chart from.
-  # If repo below is set this value if the chart name in the repo
-#  chart: ""
-
-  # An https to a valid Helm repository to download the chart from
-#  repo: ""
-
-  # Used if repo is set to look up the version of the chart
-#  version: ""
-
-  # Force recreate resource that can not be updated
-  force: false
-
-  # How long for helm to wait for the release to be active. If the value
-  # is less that or equal to zero, we will not wait in Helm
-  timeoutSeconds: 0
-
-  # Custom values that will be passed as values.yaml to the installation
-  #values:
-  #  replicas: 2
 
 
