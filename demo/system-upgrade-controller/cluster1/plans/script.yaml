@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sles-mkdir-update
+  namespace: cattle-system
+type: Opaque
+stringData:
+  script.sh: |
+    #!/bin/sh
+    set -e
+    mkdir -p /root/suc-update && echo "The System Upgrade Controller updated this node at $(date)" >>  /root/suc-update/version.txt

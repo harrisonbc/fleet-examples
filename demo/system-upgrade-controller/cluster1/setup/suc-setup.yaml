@@ -1,0 +1,12 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: suc-gitrepo-setup
+  namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - system-upgrade-controller/cluster1/plans
+  repo: https://github.com/harrisonbc/fleet-default.git
+  targets:
+    - clusterName: k3s-test
