@@ -7,6 +7,6 @@ spec:
   branch: main
   paths:
     - system-upgrade-controller/cluster1/plans
-  repo: https://github.com/harrisonbc/fleet-default.git
+  repo: https://github.com/harrisonbc/fleet-examples.git
   targets:
     - clusterName: k3s-test
