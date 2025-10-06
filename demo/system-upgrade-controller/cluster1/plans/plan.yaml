@@ -12,7 +12,7 @@ spec:
   secrets:
     - name: sles-mkdir-update
       path: /host/run/system-upgrade/secrets/sles-upgrade
-  version: v1
+  version: v2
   upgrade:
     image: registry.suse.com/suse/sle15:latest
     command: ["chroot", "/host"]
